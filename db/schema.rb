@@ -13,15 +13,15 @@
 
 ActiveRecord::Schema.define(version: 20141203020035) do
 
-  create_table "articles", force: true do |t|
-    t.string   "title"
+  create_table "articles", force: :cascade do |t|
+    t.string   "title",      limit: 255
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "comments", force: true do |t|
-    t.string   "commenter"
+  create_table "comments", force: :cascade do |t|
+    t.string   "commenter",  limit: 255
     t.text     "body"
     t.integer  "article_id"
     t.datetime "created_at"
